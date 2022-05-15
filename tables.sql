@@ -22,7 +22,8 @@ CREATE TABLE permission (
     PRIMARY KEY (permission_id),
     FOREIGN KEY (rfid)
         REFERENCES person (rfid)
-        ON DELETE CASCADE,
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
     UNIQUE (rfid)
 );
 

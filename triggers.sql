@@ -8,13 +8,9 @@ BEGIN
 
     SET NEW.timestamp = CURRENT_TIMESTAMP();
 
-    SET @n_permission_id := (SELECT permission_id
+    SET n_permission_id = (SELECT permission_id
                                 FROM permission
                                 WHERE rfid = NEW.rfid);
-
-    CALL debug_on(n_permission_id);
-    call debug_insert(n_permission_id, 'Value: ' || n_permission_id);
-    call debug_off(n_permission_id);
 
     IF n_permission_id IS NOT NULL THEN
         SET NEW.access = 1;

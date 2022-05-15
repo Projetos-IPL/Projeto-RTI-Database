@@ -15,6 +15,4 @@ DROP PROCEDURE IF EXISTS `debug_off`;
 CREATE PROCEDURE `debug_off`(IN p_proc_id VARCHAR(100))
 BEGIN
     CALL debug_insert(p_proc_id, CONCAT('Debug Ended :', NOW()));
-    SELECT debug_output FROM debug WHERE proc_id = p_proc_id ORDER BY line_id;
-    DELETE FROM debug WHERE proc_id = p_proc_id;
 END;
