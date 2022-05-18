@@ -6,7 +6,7 @@ CREATE TRIGGER tbi_entrance_logs
 BEGIN
     DECLARE n_permission_id INTEGER;
 
-    SET NEW.timestamp = CURRENT_TIMESTAMP();
+    SET NEW.timestamp = UNIX_TIMESTAMP();
 
     SET n_permission_id = (SELECT permission_id
                                 FROM permission
@@ -25,7 +25,7 @@ CREATE TRIGGER tbi_sensor_logs
     ON sensor_logs
     FOR EACH ROW
 BEGIN
-    SET NEW.timestamp = CURRENT_TIMESTAMP();
+    SET NEW.timestamp = UNIX_TIMESTAMP();
 END;
 
 DROP TRIGGER IF EXISTS tbi_actuator_logs;
@@ -34,7 +34,7 @@ CREATE TRIGGER tbi_actuator_logs
     ON actuator_logs
     FOR EACH ROW
 BEGIN
-    SET NEW.timestamp = CURRENT_TIMESTAMP();
+    SET NEW.timestamp = UNIX_TIMESTAMP();
 END;
 
 DROP TRIGGER IF EXISTS tbi_users;
