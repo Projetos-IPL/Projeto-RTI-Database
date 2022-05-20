@@ -65,7 +65,7 @@ CREATE TABLE sensor_logs
 (
     sensor_log_id INT NOT NULL AUTO_INCREMENT,
     sensor_id     INT NOT NULL,
-    value         NUMERIC(5),
+    value         VARCHAR(100),
     timestamp     INT(11),
     PRIMARY KEY (sensor_log_id),
     FOREIGN KEY (sensor_id)
