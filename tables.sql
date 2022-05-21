@@ -12,7 +12,7 @@ CREATE TABLE person
     person_id  INT         NOT NULL AUTO_INCREMENT,
     first_name VARCHAR(20) NOT NULL,
     last_name  VARCHAR(20) NOT NULL,
-    rfid       VARCHAR(10) NOT NULL,
+    rfid       VARCHAR(20) NOT NULL,
     PRIMARY KEY (person_id),
     UNIQUE (rfid)
 );
@@ -77,14 +77,14 @@ DROP TABLE IF EXISTS entrance_logs;
 CREATE TABLE entrance_logs
 (
     entrance_log_id INT         NOT NULL AUTO_INCREMENT,
-    rfid            VARCHAR(10) NOT NULL,
+    rfid            VARCHAR(20) NOT NULL,
     access          TINYINT(1),
     timestamp       INT(11),
-    PRIMARY KEY (entrance_log_id),
-    FOREIGN KEY (rfid)
-        REFERENCES person (rfid)
-        ON DELETE CASCADE
+    PRIMARY KEY (entrance_log_id)
 );
+
+
+
 
 DROP TABLE IF EXISTS entrance_logs_images;
 CREATE TABLE entrance_logs_images
