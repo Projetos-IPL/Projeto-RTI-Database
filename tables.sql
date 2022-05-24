@@ -14,14 +14,15 @@ CREATE TABLE person
     last_name  VARCHAR(20) NOT NULL,
     rfid       VARCHAR(20) NOT NULL,
     PRIMARY KEY (person_id),
-    UNIQUE (rfid)
+    UNIQUE (rfid),
+    CHECK (LENGTH(rfid) > 0)
 );
 
 DROP TABLE IF EXISTS permission;
 CREATE TABLE permission
 (
     permission_id INT         NOT NULL AUTO_INCREMENT,
-    rfid          VARCHAR(10) NOT NULL,
+    rfid          VARCHAR(20) NOT NULL,
     PRIMARY KEY (permission_id),
     FOREIGN KEY (rfid)
         REFERENCES person (rfid)
@@ -82,8 +83,6 @@ CREATE TABLE entrance_logs
     timestamp       INT(11),
     PRIMARY KEY (entrance_log_id)
 );
-
-
 
 
 DROP TABLE IF EXISTS entrance_logs_images;
