@@ -1,7 +1,8 @@
-INSERT INTO sensor (sensor_id, name) VALUES (1, 'RFID Reader');
-INSERT INTO sensor (sensor_id, name) VALUES (2, 'Leitor de temperatura');
-INSERT INTO sensor (sensor_id, name) VALUES (3, 'Detetor de fumo');
-INSERT INTO sensor (sensor_id, name) VALUES (4, 'Leitor de humidade');
+INSERT INTO sensor (sensor_id, name) VALUES (1, 'Sensor de temperatura');
+INSERT INTO sensor (sensor_id, name) VALUES (2, 'Sensor de humidade');
+INSERT INTO sensor (sensor_id, name) VALUES (3, 'Sensor de fumo');
+INSERT INTO sensor (sensor_id, name) VALUES (4, 'Sensor de movimento');
+INSERT INTO sensor (sensor_id, name) VALUES (5, 'Leitor RFID');
 
 INSERT INTO actuator (actuator_id, name) VALUES (1, 'Porta/Portão');
 INSERT INTO actuator (actuator_id, name) VALUES (2, 'Buzzer');
