@@ -54,11 +54,13 @@ CREATE TABLE actuator_logs
 (
     actuator_log_id INT NOT NULL AUTO_INCREMENT,
     actuator_id     INT NOT NULL,
-    timestamp       INT(11),
+    actuator_state  INT NOT NULL,
+    timestamp       INT,
     PRIMARY KEY (actuator_log_id),
     FOREIGN KEY (actuator_id)
         REFERENCES actuator (actuator_id)
-        ON DELETE CASCADE
+        ON DELETE CASCADE,
+    CHECK ( actuator_state IN (0, 1))
 );
 
 DROP TABLE IF EXISTS sensor_logs;
