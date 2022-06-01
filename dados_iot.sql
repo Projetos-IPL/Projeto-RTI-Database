@@ -8,5 +8,6 @@ INSERT INTO actuator (actuator_id, name) VALUES (1, 'Porta/Portão');
 INSERT INTO actuator (actuator_id, name) VALUES (2, 'Buzzer');
 INSERT INTO actuator (actuator_id, name) VALUES (3, 'Alarme');
 INSERT INTO actuator (actuator_id, name) VALUES (4, 'Ecrã LCD');
+INSERT INTO actuator (actuator_id, name) VALUES (5, 'Sprinkler Teto');
 
 COMMIT;
