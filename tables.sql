@@ -105,4 +105,21 @@ CREATE TABLE debug
     debug_output TEXT,
     line_id      INT(11) NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (line_id)
-)
+);
+
+DROP TABLE IF EXISTS events;
+CREATE TABLE events
+(
+    event_name VARCHAR(100),
+    PRIMARY KEY (event_name)
+);
+
+DROP TABLE IF EXISTS event_queue;
+CREATE TABLE event_queue
+(
+    event_queue_id INT NOT NULL AUTO_INCREMENT,
+    event_name VARCHAR(100) NOT NULL,
+    FOREIGN KEY (event_name) REFERENCES events(event_name),
+    PRIMARY KEY (event_queue_id),
+    UNIQUE (event_name)
+);
