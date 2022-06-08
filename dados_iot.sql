@@ -11,5 +11,6 @@ INSERT INTO actuator (actuator_id, name) VALUES (4, 'Buzzer');
 INSERT INTO actuator (actuator_id, name) VALUES (5, 'Alarme');
 INSERT INTO actuator (actuator_id, name) VALUES (6, 'Ecrã LCD');
 INSERT INTO actuator (actuator_id, name) VALUES (7, 'Sprinkler Teto');
+INSERT INTO actuator (actuator_id, name) VALUES (8, 'Luzes');
 
 COMMIT;
