@@ -91,7 +91,7 @@ DROP TABLE IF EXISTS entrance_logs_images;
 CREATE TABLE entrance_logs_images
 (
     entrance_log_id INT  NOT NULL,
-    image           BLOB NOT NULL,
+    image           VARCHAR(200000) NOT NULL,
     PRIMARY KEY (entrance_log_id),
     FOREIGN KEY (entrance_log_id)
         REFERENCES entrance_logs (entrance_log_id)
